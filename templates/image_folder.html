@@ -9,7 +9,7 @@
     <ul>
         {% for image in images %}
     <a href="/images/{{ folder }}/{{ image }}">
-        <img data-src="{{ url_for('static', filename='placeholder.png') }}" data-srcset="/images/{{ folder }}/{{ image }} 1x, /images/{{ folder }}/{{ image }} 2x" alt="{{ image }}">
+        <img data-src="{{ url_for('static', filename='placeholder.png') }}" data-srcset="/images/{{ folder }}/{{ image }} 1x, /images/{{ folder }}/{{ image }} 2x" alt="{{ image }}"> <br> <br> <br>
     </a>
 {% endfor %}
 

@@ -18,12 +18,12 @@ h1 {
 /* Style for lists */
 ul {
     list-style: none;
-    padding: 0;
+    
 }
 
 /* Style for list items */
 li {
-    margin: 5px 0;
+    margin: 40px 0;
 }
 
 /* Style for links */

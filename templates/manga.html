@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manga Index</title>
+    <title>{{ manga_name }} Manga</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 10px;
-            background-color: #222; /* Dark background color for dark mode */
-            color: #fff; /* Light text color for dark mode */
+            background-color: #222;
+            color: #fff;
         }
 
         h1 {
-            color: #007BFF; /* Accent color for headings in dark mode */
+            color: #007BFF;
             margin: 0;
             padding: 10px 0;
         }
@@ -26,30 +26,30 @@
         }
 
         li {
-            margin-bottom: 15px; /* Increased spacing between items */
+            margin-bottom: 15px;
         }
 
         a {
             text-decoration: none;
             color: #007BFF;
             font-weight: bold;
-            border: 1px solid #007BFF; /* Border around links */
+            border: 1px solid #007BFF;
             padding: 8px;
             display: inline-block;
-            background-color: #333; /* Background color for links in dark mode */
+            background-color: #333;
             transition: background-color 0.3s ease;
         }
 
         a:hover {
-            background-color: #007BFF; /* Hover background color for links */
+            background-color: #007BFF;
         }
     </style>
 </head>
 <body>
-    <h1>Manga Index</h1>
+    <h1>{{ manga_name }} Manga</h1>
     <ul>
-        {% for manga in mangas %}
-            <li><a href="{{ url_for('manga', manga_name=manga) }}">{{ manga }}</a></li>
+        {% for chapter in chapters %}
+            <li><a href="{{ url_for('chapter', manga_name=manga_name, chapter_name=chapter) }}">{{ chapter }}</a></li>
         {% endfor %}
     </ul>
 </body>

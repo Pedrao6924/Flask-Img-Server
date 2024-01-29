@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ manga_name }} - Chapter {{ chapter_name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0; /* Add this line to eliminate whitespace between inline elements */
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            margin-right: -4px; /* Adjust this value as needed to counteract the potential subpixel rendering issue */
+        }
+
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: block; /* Ensure images don't have any extra spacing */
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ manga_name }} - Chapter {{ chapter_name }}</h1>
+    <ul>
+        {% for page in pages %}
+            <li><img src="{{ url_for('page', manga_name=manga_name, chapter_name=chapter_name, page_name=page) }}" alt="Page {{ loop.index }}"></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
